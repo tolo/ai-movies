@@ -30,6 +30,7 @@
             border-radius: 5px;
             overflow: hidden;
             width: 200px;
+            cursor: pointer;
         }
 
         .movie img {
@@ -126,6 +127,11 @@
                             <p>Rating: ${movie.vote_average}</p>
                         </div>
                     `;
+
+                    // Add event listener to navigate to details page on click
+                    movieElement.addEventListener('click', () => {
+                        window.location.href = `details.html?movieId=${movie.id}`;
+                    });
 
                     appContainer.appendChild(movieElement); // Append the movie element to the container
                 });
